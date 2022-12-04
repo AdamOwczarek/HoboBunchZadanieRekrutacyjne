@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4180698505486058412}
   m_Layer: 0
   m_Name: Warehouse
-  m_TagString: Untagged
+  m_TagString: Warehouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,11 +80,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf57e0afe9df6204986ceb1de5c26f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resources: []
   resourceSOs:
   - {fileID: 11400000, guid: 795efae3f160520408a9f448e352f7e7, type: 2}
   - {fileID: 11400000, guid: 0c3e8e98b5cb351459d436f738749146, type: 2}
-  resourceViews: []
   resourceViewPrefab: {fileID: 946835213587290941, guid: a915a93d510cacc4ca14d39201d034ad,
     type: 3}
   resourceViewsParent: {fileID: 229017037377120688}
