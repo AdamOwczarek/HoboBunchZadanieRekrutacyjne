@@ -1,9 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlaceBuildingSystem : MonoBehaviour
 {
+    [SerializeField]
+    GameObject humanPrefab;
+    private MoveWorkerSystem humanNavigator;
+    
     [SerializeField]
     GameObject gameplayPrefab;
     [SerializeField]
@@ -16,6 +22,11 @@ public class PlaceBuildingSystem : MonoBehaviour
 
     [SerializeField]
     Transform buildingsContainer;
+
+    public void Start()
+    {
+       humanNavigator = humanPrefab.GetComponent<MoveWorkerSystem>();
+    }
 
     void OnEnable()
     {
@@ -45,6 +56,20 @@ public class PlaceBuildingSystem : MonoBehaviour
         if (Input.GetMouseButton(0) && placingVisual.transform.position != placingVisualLimboPosition)
         {
             Instantiate(gameplayPrefab, placingVisual.transform.position, placingVisual.transform.rotation, buildingsContainer);
+            
+            if (gameplayPrefab.CompareTag("ExtractionBuilding"))
+            {
+                humanNavigator.extractorList.Add(placingVisual.transform.position);
+            }
+            else if (gameplayPrefab.CompareTag("ProductionBuilding"))
+            {
+                humanNavigator.productionList.Add(placingVisual.transform.position);
+            }
+            else if (gameplayPrefab.CompareTag("Warehouse"))
+            {
+                humanNavigator.warehouseList.Add(placingVisual.transform.position);
+            }
+                
             enabled = false;
         }
 

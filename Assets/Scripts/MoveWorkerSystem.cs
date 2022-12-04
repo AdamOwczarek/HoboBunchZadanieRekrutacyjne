@@ -3,39 +3,52 @@ using System.Collections.Generic;
 using Mono.Cecil;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MoveWorkerSystem : MonoBehaviour
 {
+    public List<Vector3> extractorList = new List<Vector3>();
+    public List<Vector3> productionList = new List<Vector3>();
+    public  List<Vector3> warehouseList = new List<Vector3>();
+    
     private enum CarriedResourceEnum
     { 
         Wood, 
         Chair,
         Null
     }
+    private CarriedResourceEnum carriedResource = CarriedResourceEnum.Null;
+    
     public GameResourceSO woodResourceSO;
     public GameResourceSO chairResourceSO;
     public GameResourcesList resourcesList;
-    
-    private Transform direction;
 
-    private CarriedResourceEnum carriedResource = CarriedResourceEnum.Null;
+    [SerializeField] public GameObject buildingContainer;
+    
+   //private Transform direction;
+   // private Transform extractionTransform;
+   // private Transform productionTransform;
+    //private Transform warehouseTransform;
+   
     
     // Start is called before the first frame update
     void Start()
     {
-        DetermineDirection();
+        
+        FindBuildings();
         Move();
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         
     }
     
-    void DetermineDirection()
+    void FindBuildings()
     {
-        
+       
     }
     
     void Move()
