@@ -456,9 +456,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a75173d32486264593093cb76493fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  extractorList: []
+  productionList: []
+  warehouseList: []
   woodResourceSO: {fileID: 11400000, guid: 795efae3f160520408a9f448e352f7e7, type: 2}
   chairResourceSO: {fileID: 11400000, guid: 0c3e8e98b5cb351459d436f738749146, type: 2}
   resourcesList: {fileID: -4661505553527303129}
+  destination: {x: 0, y: 0, z: 0}
+  speed: 1
 --- !u!114 &-4661505553527303129
 MonoBehaviour:
   m_ObjectHideFlags: 0
